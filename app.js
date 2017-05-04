@@ -14,7 +14,7 @@ const initializeCountdown = (milliseconds) => {
   currentCountdownMilliseconds = milliseconds
   countdown = setInterval(() => { 
     currentCountdownMilliseconds = currentCountdownMilliseconds - 1000
-    if (currentCountdownMilliseconds <= 1000) {
+    if (currentCountdownMilliseconds <= 0) {
       timerComplete()
     } else {
       updateDisplay(currentCountdownMilliseconds)
@@ -42,18 +42,15 @@ const formatTime = (milliseconds) => {
 
 const updateDisplay = (milliseconds) => {
   timeDisplayEl.innerText = formatTime(milliseconds)
-  console.log(formatTime(milliseconds))
 }
 
 const startButtonClickHander = (event) => {
-  console.log('you clicked the start button')
   if (!running) {
     initializeCountdown(currentCountdownMilliseconds)
   }
 }
 
 const stopButtonClickHander = (event) => {
-  console.log('you clicked the stop button')
   clearInterval(countdown)
   running = false
 }
@@ -61,11 +58,15 @@ const stopButtonClickHander = (event) => {
 const timerComplete = () => {
   clearInterval(countdown)
   running = false
-  alert('TIME IS DONE!');
+  audioAlertComplete()
+}
+
+const audioAlertComplete = () => {
+  const audio = new Audio('complete.mp3')
+  audio.play()
 }
 
 const resetButtonClickHander = (event) => {
-  console.log('you clicked the reset button')
   clearInterval(countdown)
   initializeCountdown(countdownMilliseconds)
 }
