@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Tempus</title>
+<style>
+	body {
+		font: 1.5em monospace;
+	}
+	#timer { 
+		font-weight: bold; 
+		font-size: 2em;
+		margin: 10px;
+		text-align: center;
+	}
+	#controls { 
+		margin: 10px;
+	}
+	button {
+		height: 40px;
+		padding: 10px;
+		margin: 5px;
+	}
+</style>
+	</head>
+	<body>
+		<div id="timer">
+			<div id="time">00:00:00</div>
+			<div id="controls">
+				<button id="button-start">Start</button>
+				<button id="button-stop">Stop</button>
+				<button id="button-reset">Reset</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		require('./app.js')
+	</script>
+</html>
