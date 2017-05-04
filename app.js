@@ -1,4 +1,4 @@
-const countdownMilliseconds = 15 * 60 * 1000
+const countdownMilliseconds = 25 * 60 * 1000
 
 const timeDisplayEl = document.getElementById("time")
 
